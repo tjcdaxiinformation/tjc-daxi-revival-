@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026 生命的道路 | 真耶穌教會大溪教會 靈恩佈道會</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brown: {
+                            50: '#fdfbf7',
+                            100: '#f7f2ea',
+                            200: '#ebdccb',
+                            300: '#dcbe9f',
+                            400: '#c59a72',
+                            500: '#aa7a4c',
+                            600: '#8c603a',
+                            700: '#6e4a2e',
+                            800: '#5a3e2b',
+                            900: '#3a2312',
+                        },
+                        dove: {
+                            blue: '#1b4980',
+                            light: '#4b75a6'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fcfaf7;
+            color: #3a2312;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-poster-title {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.9),
+                        -2px -2px 0px rgba(255, 255, 255, 0.9),
+                         2px -2px 0px rgba(255, 255, 255, 0.9),
+                        -2px 2px 0px rgba(255, 255, 255, 0.9),
+                         0px 4px 10px rgba(90, 62, 43, 0.15);
+        }
+        .text-brown-gradient {
+            background: linear-gradient(135deg, #5a3e2b 0%, #8c603a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-soft-pattern {
+            background-image: radial-gradient(#e5d8cb 0.75px, transparent 0.75px), radial-gradient(#e5d8cb 0.75px, #fcfaf7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(90, 62, 43, 0.08);
+        }
+        .active-tab {
+            background-color: #5a3e2b !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(90, 62, 43, 0.25);
+        }
+        /* Custom Toast Notification */
+        #toast {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+        }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen bg-brown-50 pb-28 relative shadow-2xl overflow-x-hidden border-x border-brown-100">
+
+    <!-- Top Header Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brown-100/60 px-4 py-3 flex justify-between items-center transition-all duration-300">
+        <div class="flex items-center space-x-2">
+            <!-- Church Logo SVG Emblem -->
+            <div class="w-8 h-8 rounded-full bg-brown-100 flex items-center justify-center text-dove-blue">
+                <svg class="w-5 h-5" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M20,50 Q35,20 60,35 Q85,50 90,30 Q75,65 50,60 Q35,75 20,50 Z" />
+                    <circle cx="75" cy="35" r="3" fill="#fff"/>
+                </svg>
+            </div>
+            <div>
+                <span class="block text-xs font-bold text-brown-800 tracking-wider">真耶穌教會大溪教會</span>
+                <span class="block text-[9px] text-brown-500 font-serif tracking-widest">DAXI TJC</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-2">
+            <button onclick="scrollToSection('invite-card')" class="text-xs bg-brown-800 hover:bg-brown-900 text-white px-3 py-1.5 rounded-full font-medium transition flex items-center gap-1 shadow-sm">
+                <i class="fa-regular fa-paper-plane text-[10px]"></i> 邀約朋友
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner & Poster Header Section -->
+    <section class="relative bg-gradient-to-b from-white via-brown-50 to-brown-100/40 pt-6 pb-10 px-5 text-center overflow-hidden">
+        
+        <!-- Background Watermark SVG: Holy Spirit Dove -->
+        <div class="absolute -top-4 right-0 left-0 flex justify-center opacity-10 pointer-events-none">
+            <svg class="w-80 h-80 text-brown-900" viewBox="0 0 200 200" fill="currentColor">
+                <path d="M100 20 C120 50, 170 60, 190 100 C150 110, 120 130, 100 180 C80 130, 50 110, 10 100 C30 60, 80 50, 100 20 Z" />
+            </svg>
+        </div>
+
+        <!-- Top Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-brown-200 text-brown-700 text-xs font-medium mb-4 shadow-sm backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
+            相約在大溪教會 · Invite You
+        </div>
+
+        <!-- Main Title Group based on Poster -->
+        <div class="relative z-10 mb-2">
+            <h2 class="text-lg font-serif font-bold text-brown-700 tracking-widest mb-1">2026 靈恩佈道會</h2>
+            <h1 class="font-poster-title text-4xl sm:text-5xl text-brown-800 tracking-wider my-3 leading-tight">
+                生命<span class="text-brown-600">的</span>道路
+            </h1>
+        </div>
+
+        <!-- Decorative Floral Botanical Banner SVG -->
+        <div class="w-full my-4 flex justify-center items-center">
+            <svg class="w-full max-w-xs h-12 text-brown-400" viewBox="0 0 300 40" fill="none" stroke="currentColor">
+                <path d="M10,20 Q75,35 150,20 Q225,5 290,20" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <!-- Leaves and flowers -->
+                <g fill="#aa7a4c" opacity="0.7">
+                    <circle cx="150" cy="20" r="4" />
+                    <circle cx="135" cy="22" r="3" fill="#c59a72" />
+                    <circle cx="165" cy="18" r="3" fill="#c59a72" />
+                    <path d="M140,20 C130,10 120,25 110,18" stroke="#8c603a" stroke-width="1.5"/>
+                    <path d="M160,20 C170,30 180,15 190,22" stroke="#8c603a" stroke-width="1.5"/>
+                </g>
+            </svg>
+        </div>
+
+        <p class="text-sm text-brown-700 leading-relaxed font-light max-w-xs mx-auto mb-4">
+            在忙碌紛擾的世界裡，您是否也在尋找人生的方向與心靈的平安？邀請您一同來到神的面前，聆聽生命的答案。
+        </p>
+
+        <!-- Quick Event Date Tag -->
+        <div class="inline-block bg-white/90 rounded-2xl px-4 py-2 border border-brown-200 shadow-sm text-xs font-medium text-brown-800">
+            <i class="fa-regular fa-calendar-check text-brown-600 mr-1.5"></i>
+            聚會日期：<span class="font-bold">2026年 10月22日(四) ～ 10月25日(日)</span>
+        </div>
+    </section>
+
+    <!-- Welcome & Gospel Intro Card for Seekers -->
+    <section class="px-4 -mt-2 mb-6 relative z-20">
+        <div class="bg-white rounded-2xl p-5 border border-brown-100 card-shadow text-center">
+            <div class="w-10 h-10 rounded-full bg-brown-50 mx-auto flex items-center justify-center text-brown-700 mb-3 border border-brown-100">
+                <i class="fa-solid fa-heart text-brown-600"></i>
+            </div>
+            <h3 class="font-serif font-bold text-brown-800 text-lg mb-2">給親愛的朋友</h3>
+            <p class="text-xs text-brown-700 leading-relaxed text-justify mb-4">
+                「人生就像一趟旅程，有時晴朗，有時迷茫。」大溪教會誠摯邀請您與家人朋友，在這三天半的時間裡，透過讚美詩歌、聖經信息與溫暖的團契，一同經歷神所賜的平安與亮光。
+            </p>
+            <div class="grid grid-cols-3 gap-2 border-t border-brown-100 pt-3 text-center text-xs">
+                <div class="p-2 rounded-lg bg-brown-50/60">
+                    <span class="block font-bold text-brown-800 mb-0.5">免收費用</span>
+                    <span class="text-[10px] text-brown-500">自由參加</span>
+                </div>
+                <div class="p-2 rounded-lg bg-brown-50/60">
+                    <span class="block font-bold text-brown-800 mb-0.5">親切接待</span>
+                    <span class="text-[10px] text-brown-500">專人引導</span>
+                </div>
+                <div class="p-2 rounded-lg bg-brown-50/60">
+                    <span class="block font-bold text-brown-800 mb-0.5">備有愛宴</span>
+                    <span class="text-[10px] text-brown-500">週日午餐</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Day Schedule & Sermon Topics Section -->
+    <section class="px-4 py-4" id="schedule">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <span class="text-[10px] font-bold text-brown-500 tracking-widest uppercase">Program Details</span>
+                <h3 class="font-serif font-bold text-brown-900 text-xl">證道分享與聚會流程</h3>
+            </div>
+            <span class="text-xs text-brown-600 bg-brown-100/80 px-2.5 py-1 rounded-full font-medium">共 4 天主題</span>
+        </div>
+
+        <!-- Interactive Tab Switcher -->
+        <div class="flex space-x-1.5 p-1 bg-brown-100/70 rounded-xl mb-4 overflow-x-auto text-xs font-medium">
+            <button onclick="switchTab('day1')" id="tab-day1" class="tab-btn flex-1 py-2 px-2.5 rounded-lg text-center transition duration-200 active-tab whitespace-nowrap">
+                10/22 (四)<br/><span class="text-[11px] font-bold">Day 1 導航</span>
+            </button>
+            <button onclick="switchTab('day2')" id="tab-day2" class="tab-btn flex-1 py-2 px-2.5 rounded-lg text-center transition duration-200 text-brown-700 hover:bg-white/60 whitespace-nowrap">
+                10/23 (五)<br/><span class="text-[11px] font-bold">Day 2 救贖</span>
+            </button>
+            <button onclick="switchTab('day3')" id="tab-day3" class="tab-btn flex-1 py-2 px-2.5 rounded-lg text-center transition duration-200 text-brown-700 hover:bg-white/60 whitespace-nowrap">
+                10/24 (六)<br/><span class="text-[11px] font-bold">Day 3 歡呼</span>
+            </button>
+            <button onclick="switchTab('day4')" id="tab-day4" class="tab-btn flex-1 py-2 px-2.5 rounded-lg text-center transition duration-200 text-brown-700 hover:bg-white/60 whitespace-nowrap">
+                10/25 (日)<br/><span class="text-[11px] font-bold">靈恩愛宴</span>
+            </button>
+        </div>
+
+        <!-- Tab Content Panes -->
+        <div id="tab-content">
+            <!-- Day 1 Content -->
+            <div id="content-day1" class="tab-pane bg-white rounded-2xl p-5 border border-brown-100 card-shadow transition-all duration-300">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md text-xs font-bold">Day 1 主題信息</span>
+                    <span class="text-xs font-bold text-brown-600 flex items-center gap-1">
+                        <i class="fa-regular fa-clock"></i> 10/22 (四) 19:30 - 21:00
+                    </span>
+                </div>
+                <h4 class="font-serif font-bold text-2xl text-brown-800 mb-2">生命的導航</h4>
+                <p class="text-xs text-brown-700 leading-relaxed mb-4">
+                    在這充滿變數的大海裡，我們常迷失方向。神的聖言如同夜航中的燈塔，指引我們走向平安與真理的港灣。
+                </p>
+                <div class="bg-brown-50 border-l-4 border-brown-600 p-3.5 rounded-r-xl mb-4">
+                    <p class="text-xs font-serif italic text-brown-800 mb-1">「你的話是我腳前的燈，是我路上的光。」</p>
+                    <span class="block text-[10px] text-brown-500 font-bold text-right">— 聖經·詩篇 119:105</span>
+                </div>
+                <div class="space-y-2 border-t border-brown-100 pt-3 text-xs text-brown-700">
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">19:30 - 20:00</span>
+                        <span class="font-medium">詩歌讚美與禱告</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">20:00 - 20:45</span>
+                        <span class="font-bold text-brown-800">主題證道：生命的導航</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">20:45 - 21:00</span>
+                        <span class="font-medium">按手祈求聖靈與祝福</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Content -->
+            <div id="content-day2" class="tab-pane hidden bg-white rounded-2xl p-5 border border-brown-100 card-shadow transition-all duration-300">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md text-xs font-bold">Day 2 主題信息</span>
+                    <span class="text-xs font-bold text-brown-600 flex items-center gap-1">
+                        <i class="fa-regular fa-clock"></i> 10/23 (五) 19:30 - 21:00
+                    </span>
+                </div>
+                <h4 class="font-serif font-bold text-2xl text-brown-800 mb-2">生命的救贖</h4>
+                <p class="text-xs text-brown-700 leading-relaxed mb-4">
+                    人生難免重擔與傷痛，耶穌基督降世為要尋找、拯救失喪的人，帶給我們罪的赦免與靈魂真正的自由。
+                </p>
+                <div class="bg-brown-50 border-l-4 border-brown-600 p-3.5 rounded-r-xl mb-4">
+                    <p class="text-xs font-serif italic text-brown-800 mb-1">「凡勞苦擔重擔的人可以到我這裡來，我就使你們得安息。」</p>
+                    <span class="block text-[10px] text-brown-500 font-bold text-right">— 聖經·馬太福音 11:28</span>
+                </div>
+                <div class="space-y-2 border-t border-brown-100 pt-3 text-xs text-brown-700">
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">19:30 - 20:00</span>
+                        <span class="font-medium">詩歌讚美與禱告</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">20:00 - 20:45</span>
+                        <span class="font-bold text-brown-800">主題證道：生命的救贖</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">20:45 - 21:00</span>
+                        <span class="font-medium">體驗禱告與賜福</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Content -->
+            <div id="content-day3" class="tab-pane hidden bg-white rounded-2xl p-5 border border-brown-100 card-shadow transition-all duration-300">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md text-xs font-bold">Day 3 主題信息 (全天)</span>
+                    <span class="text-xs font-bold text-brown-600 flex items-center gap-1">
+                        <i class="fa-regular fa-clock"></i> 10/24 (六) 三場聚會
+                    </span>
+                </div>
+                <h4 class="font-serif font-bold text-2xl text-brown-800 mb-2">生命的歡呼</h4>
+                <p class="text-xs text-brown-700 leading-relaxed mb-4">
+                    當我們領受聖靈與從天而來的喜樂，心中便充滿無法言喻的歡呼與讚美。歡迎您自由選擇適合時段參加！
+                </p>
+                <div class="bg-brown-50 border-l-4 border-brown-600 p-3.5 rounded-r-xl mb-4">
+                    <p class="text-xs font-serif italic text-brown-800 mb-1">「但願使人有盼望的神，因信將諸般的喜樂、平安充滿你們的心。」</p>
+                    <span class="block text-[10px] text-brown-500 font-bold text-right">— 聖經·羅馬書 15:13</span>
+                </div>
+                <div class="space-y-3 border-t border-brown-100 pt-3 text-xs">
+                    <div class="p-2.5 rounded-xl bg-brown-50/80 flex justify-between items-center">
+                        <div>
+                            <span class="block font-bold text-brown-800">早晨聚會</span>
+                            <span class="text-[10px] text-brown-600">09:00 - 11:00</span>
+                        </div>
+                        <span class="text-brown-700 font-medium">生命之泉證道</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-brown-50/80 flex justify-between items-center">
+                        <div>
+                            <span class="block font-bold text-brown-800">午會聚會</span>
+                            <span class="text-[10px] text-brown-600">13:30 - 15:00</span>
+                        </div>
+                        <span class="text-brown-700 font-medium">恩典見證與分享</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-brown-50/80 flex justify-between items-center">
+                        <div>
+                            <span class="block font-bold text-brown-800">晚會聚會</span>
+                            <span class="text-[10px] text-brown-600">19:30 - 21:00</span>
+                        </div>
+                        <span class="text-brown-700 font-medium">生命的歡呼 (精采證道)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 Content (Sunday Service) -->
+            <div id="content-day4" class="tab-pane hidden bg-white rounded-2xl p-5 border border-brown-100 card-shadow transition-all duration-300">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md text-xs font-bold">主日聚會與愛宴</span>
+                    <span class="text-xs font-bold text-brown-600 flex items-center gap-1">
+                        <i class="fa-regular fa-clock"></i> 10/25 (日) 09:00 - 13:00
+                    </span>
+                </div>
+                <h4 class="font-serif font-bold text-2xl text-brown-800 mb-2">靈恩恩典與愛宴</h4>
+                <p class="text-xs text-brown-700 leading-relaxed mb-4">
+                    特別為所有慕道朋友與信徒預備的主日溫馨聚會，會後備有豐富的大溪美食愛宴，歡迎全家大小一同享用。
+                </p>
+                <div class="space-y-2 border-t border-brown-100 pt-3 text-xs text-brown-700">
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">09:00 - 11:30</span>
+                        <span class="font-bold text-brown-800">靈恩聚會與聖餐禮</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brown-500">11:30 - 13:00</span>
+                        <span class="font-bold text-emerald-700"><i class="fa-solid fa-utensils mr-1"></i> 溫馨愛宴餐敘</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Electronic Invitation Card Section -->
+    <section class="px-4 py-4" id="invite-card">
+        <div class="bg-gradient-to-br from-brown-800 to-brown-900 rounded-3xl p-6 text-white card-shadow relative overflow-hidden">
+            <!-- Decorative Background Leaf SVG -->
+            <div class="absolute -right-10 -bottom-10 opacity-15 pointer-events-none text-white">
+                <svg class="w-52 h-52" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M30,10 C50,30 80,40 90,80 C50,80 20,60 10,30 Z"/>
+                </svg>
+            </div>
+
+            <div class="text-center mb-5">
+                <span class="text-[10px] tracking-widest text-brown-300 uppercase font-medium">Digital Invitation Card</span>
+                <h3 class="font-serif font-bold text-2xl text-amber-100 mt-0.5">專屬電子邀請卡</h3>
+                <p class="text-xs text-brown-200 mt-1 font-light">輸入親友姓名，生成一張暖心的福音邀請卡分享給他/她</p>
+            </div>
+
+            <!-- Interactive Invitation Form -->
+            <div class="space-y-3 mb-5">
+                <div>
+                    <label class="block text-[11px] text-brown-300 mb-1 font-medium">收件人（朋友的名字 / 稱呼）：</label>
+                    <input type="text" id="friend-name" placeholder="例如：小明 / 親愛的阿姨" 
+                           class="w-full bg-white/10 border border-white/20 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-brown-300 focus:outline-none focus:ring-2 focus:ring-amber-300 transition">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] text-brown-300 mb-1 font-medium">挑選溫馨邀請語：</label>
+                    <select id="invite-msg-select" onchange="updateCardPreview()"
+                            class="w-full bg-brown-800 border border-white/20 rounded-xl px-3 py-2 text-xs text-white focus:outline-none">
+                        <option value="1">溫柔陪伴：「最近過得好嗎？想邀請你一起來放鬆心靈...」</option>
+                        <option value="2">平安祝福：「這是一個充滿平安與祝福的聚會，很想與你分享！」</option>
+                        <option value="3">簡單真誠：「10/22-10/25 大溪家家有聚會，邀請你來坐坐享用愛宴！」</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Live Invitation Card Preview Box -->
+            <div id="card-preview-box" class="bg-white text-brown-900 rounded-2xl p-4 shadow-inner mb-5 relative border border-brown-200">
+                <div class="flex justify-between items-center border-b border-brown-100 pb-2 mb-2">
+                    <span class="font-serif font-bold text-brown-800 text-sm">親愛的 <span id="preview-name-display" class="text-brown-600 underline">好友</span>：</span>
+                    <span class="text-[10px] bg-brown-100 text-brown-700 px-2 py-0.5 rounded-full">真耶穌教會大溪教會</span>
+                </div>
+                <p id="preview-text-display" class="text-xs text-brown-700 leading-relaxed mb-3">
+                    最近過得好嗎？誠摯邀請你參加 10/22-10/25 的「生命的道路」佈道會，一起尋找生命的方向與內心的平安！
+                </p>
+                <div class="text-[10px] text-brown-500 bg-brown-50 p-2 rounded-lg flex items-center justify-between">
+                    <span>📅 10/22(四) - 10/25(日)</span>
+                    <span>📍 桃園大溪區民權東路185巷31號</span>
+                </div>
+            </div>
+
+            <!-- Share Action Buttons -->
+            <div class="grid grid-cols-2 gap-2.5">
+                <button onclick="shareToLine()" class="bg-[#06C755] hover:bg-[#05b34c] text-white py-2.5 px-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
+                    <i class="fa-brands fa-line text-sm"></i> 分享至 LINE
+                </button>
+                <button onclick="copyInvitationText()" class="bg-amber-100 hover:bg-amber-200 text-brown-900 py-2.5 px-3 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
+                    <i class="fa-regular fa-copy text-sm"></i> 複製邀請文字
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section for Seekers / Non-Believers -->
+    <section class="px-4 py-4">
+        <div class="mb-3 text-center">
+            <span class="text-[10px] font-bold text-brown-500 tracking-widest uppercase">FAQ</span>
+            <h3 class="font-serif font-bold text-brown-900 text-xl">首次來到教會問與答</h3>
+        </div>
+
+        <div class="space-y-2.5 text-xs">
+            <!-- FAQ 1 -->
+            <details class="group bg-white rounded-xl border border-brown-100 p-3.5 card-shadow [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex justify-between items-center font-bold text-brown-800 cursor-pointer">
+                    <span>Q: 我不是基督徒，也可以參加嗎？</span>
+                    <span class="transition group-open:rotate-180 text-brown-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="mt-2 text-brown-600 leading-relaxed pt-2 border-t border-brown-50">
+                    當然可以！這場佈道會特別為所有關心生命方向、尋求心靈平安的朋友預備。無論您是什麼信仰背景，我們都熱烈歡迎您。
+                </p>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="group bg-white rounded-xl border border-brown-100 p-3.5 card-shadow [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex justify-between items-center font-bold text-brown-800 cursor-pointer">
+                    <span>Q: 參加聚會需要著特定服裝或費用嗎？</span>
+                    <span class="transition group-open:rotate-180 text-brown-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="mt-2 text-brown-600 leading-relaxed pt-2 border-t border-brown-50">
+                    完全不需要任何費用，服裝以整齊大方、舒適為主即可。現場會有親切的接待人員引導您入座。
+                </p>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="group bg-white rounded-xl border border-brown-100 p-3.5 card-shadow [&_summary::-webkit-details-marker]:hidden">
+                <summary class="flex justify-between items-center font-bold text-brown-800 cursor-pointer">
+                    <span>Q: 週日(10/25)的愛宴需要報名嗎？</span>
+                    <span class="transition group-open:rotate-180 text-brown-500"><i class="fa-solid fa-chevron-down"></i></span>
+                </summary>
+                <p class="mt-2 text-brown-600 leading-relaxed pt-2 border-t border-brown-50">
+                    愛宴為免費招待，無需預先費用。為了方便我們準備豐盛餐點，您可以先透過 LINE 或電話告知人數喔！
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Location & Contact Info Section -->
+    <section class="px-4 py-4" id="location">
+        <div class="bg-white rounded-2xl p-5 border border-brown-100 card-shadow">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-brown-100 text-brown-800 flex items-center justify-center text-lg shrink-0">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                    <h4 class="font-serif font-bold text-brown-900 text-base">真耶穌教會 大溪教會</h4>
+                    <p class="text-xs text-brown-500">DAXI TRUE JESUS CHURCH</p>
+                </div>
+            </div>
+
+            <div class="space-y-2.5 text-xs text-brown-700 mb-4">
+                <div class="flex items-start gap-2">
+                    <i class="fa-solid fa-map-pin text-brown-500 mt-0.5"></i>
+                    <span>桃園市大溪區民權東路185巷31號</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-brown-500"></i>
+                    <span>03-3886201</span>
+                </div>
+            </div>
+
+            <!-- Contact Person Card -->
+            <div class="p-3.5 bg-brown-50/80 rounded-xl border border-brown-100 mb-4">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="font-bold text-xs text-brown-800 flex items-center gap-1.5">
+                        <i class="fa-solid fa-user-check text-brown-600"></i> 聯絡窗口：宣道股 王鴻志弟兄
+                    </span>
+                    <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-medium">專人服務</span>
+                </div>
+                <p class="text-[11px] text-brown-600 leading-relaxed">
+                    加入 LINE 好友後留下訊息，將有專人會儘快親自與您聯絡！
+                </p>
+            </div>
+
+            <!-- Map and LINE Add Friend Buttons Grid -->
+            <div class="grid grid-cols-2 gap-2">
+                <a href="https://maps.google.com/?q=桃園市大溪區民權東路185巷31號" target="_blank" 
+                   class="bg-brown-50 hover:bg-brown-100 border border-brown-200 text-brown-800 py-2.5 px-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+                    <i class="fa-solid fa-diamond-turn-right text-brown-600"></i> 開啟地圖導航
+                </a>
+                <a href="https://line.me/ti/p/U3XGjc8GKN" target="_blank" 
+                   class="bg-[#06C755] hover:bg-[#05b34c] text-white py-2.5 px-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-sm">
+                    <i class="fa-brands fa-line text-base"></i> 加 LINE 好友
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-xs text-brown-500 space-y-2">
+        <div class="inline-block bg-brown-100/60 px-3 py-1 rounded-full text-[11px] text-brown-700">
+            <i class="fa-brands fa-line text-emerald-600 mr-1"></i> 聯絡窗口：大溪教會 宣道股 王鴻志弟兄
+        </div>
+        <p>願耶穌基督的平安與喜樂與您同在</p>
+        <p class="text-[10px] text-brown-400">© 2026 真耶穌教會大溪教會 保留所有權利</p>
+    </footer>
+
+    <!-- Sticky Mobile Bottom Bar -->
+    <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-brown-100 p-3 z-50 shadow-lg flex items-center gap-2">
+        <a href="https://line.me/ti/p/U3XGjc8GKN" target="_blank" class="flex-1 bg-[#06C755] hover:bg-[#05b34c] text-white py-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+            <i class="fa-brands fa-line text-base"></i> 加入 LINE 好友
+        </a>
+        <button onclick="scrollToSection('invite-card')" class="flex-1 bg-brown-800 hover:bg-brown-900 text-white py-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+            <i class="fa-solid fa-share-nodes"></i> 生成邀請函
+        </button>
+        <a href="https://maps.google.com/?q=桃園市大溪區民權東路185巷31號" target="_blank" class="w-11 h-11 bg-amber-500 hover:bg-amber-600 text-white rounded-xl flex items-center justify-center text-base transition shrink-0 shadow-sm">
+            <i class="fa-solid fa-location-arrow"></i>
+        </a>
+    </div>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.add('hidden');
+            });
+            // Reset tab button states
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-brown-700');
+            });
+
+            // Show target pane & highlight button
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('active-tab');
+            activeBtn.classList.remove('text-brown-700');
+        }
+
+        // Smooth Scroll Helper
+        function scrollToSection(id) {
+            const elem = document.getElementById(id);
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Card Preview Live Updater
+        const friendInput = document.getElementById('friend-name');
+        const previewName = document.getElementById('preview-name-display');
+        const previewText = document.getElementById('preview-text-display');
+        const msgSelect = document.getElementById('invite-msg-select');
+
+        const messages = {
+            "1": "最近過得好嗎？想邀請你一起來放鬆心靈。大溪教會將舉辦「生命的道路」佈道會，有溫暖的詩歌與生命信息，非常適合你，期待能見到你！",
+            "2": "這是一個充滿平安與祝福的聚會，很想與你分享！10/22-10/25 大溪教會「生命的道路」佈道會，邀請你和家人一起來領受祝福！",
+            "3": "10/22-10/25 大溪教會舉辦靈恩佈道會，週日還有免費大溪愛宴聚餐！誠摯邀請你來坐坐，體驗神愛的溫暖！"
+        };
+
+        function updateCardPreview() {
+            const nameValue = friendInput.value.trim() || "好友";
+            previewName.textContent = nameValue;
+            previewText.textContent = messages[msgSelect.value];
+        }
+
+        friendInput.addEventListener('input', updateCardPreview);
+
+        // Share to LINE Helper
+        function shareToLine() {
+            const name = friendInput.value.trim() || "好友";
+            const text = `【生命的道路 - 福音邀請】\n親愛的 ${name}：\n${messages[msgSelect.value]}\n\n📅 時間：2026/10/22(四) ~ 10/25(日)\n📍 地點：真耶穌教會大溪教會 (桃園市大溪區民權東路185巷31號)\n👤 聯絡窗口：宣道股 王鴻志弟兄\n💬 加 LINE 好友諮詢：https://line.me/ti/p/U3XGjc8GKN\n（加好友後將有專人儘快親自與您聯絡！）`;
+            const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(text)}`;
+            window.open(lineUrl, '_blank');
+        }
+
+        // Copy Invitation Text
+        function copyInvitationText() {
+            const name = friendInput.value.trim() || "好友";
+            const fullText = `【生命的道路 - 福音邀請函】\n親愛的 ${name}：\n${messages[msgSelect.value]}\n\n📅 時間：2026/10/22(四) - 10/25(日)\n📍 地點：真耶穌教會大溪教會 (桃園市大溪區民權東路185巷31號)\n👤 聯絡窗口：宣道股 王鴻志弟兄\n💬 加 LINE 好友：https://line.me/ti/p/U3XGjc8GKN\n（將有專人會儘快親自與您聯絡！）\n\n期待您的光臨！`;
+
+            // Fallback execCommand for cross-platform iframe compatibility
+            const textarea = document.createElement('textarea');
+            textarea.value = fullText;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast("邀請內容已複製到剪貼簿！");
+            } catch (err) {
+                showToast("複製失敗，請手動複製");
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+
+        // Show Toast Function
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
