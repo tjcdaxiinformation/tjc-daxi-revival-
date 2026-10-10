@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2026 生命的道路 | 真耶穌教會大溪教會 靈恩佈道會</title>
+    
+    <!-- Open Graph Meta Tags for LINE / Facebook Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="2026 生命的道路 | 真耶穌教會大溪教會 靈恩佈道會">
+    <meta property="og:description" content="誠摯邀請您參加 2026/10/22(四)~10/25(日) 大溪教會靈恩佈道會，一起尋找生命的方向與內心的平安！">
+    <meta property="og:site_name" content="真耶穌教會大溪教會">
+    <meta property="og:image" content="poster.jpg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -486,7 +494,7 @@
             </div>
 
             <!-- Map and LINE Add Friend Buttons Grid -->
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-2 gap-2 mb-2">
                 <a href="https://maps.google.com/?q=桃園市大溪區民權東路185巷31號" target="_blank" 
                    class="bg-brown-50 hover:bg-brown-100 border border-brown-200 text-brown-800 py-2.5 px-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
                     <i class="fa-solid fa-diamond-turn-right text-brown-600"></i> 開啟地圖導航
@@ -496,17 +504,54 @@
                     <i class="fa-brands fa-line text-base"></i> 加 LINE 好友
                 </a>
             </div>
+
+            <!-- Theme Poster View Button -->
+            <button onclick="openPosterModal()" class="w-full bg-amber-50 hover:bg-amber-100 border border-amber-200/80 text-brown-800 py-2.5 px-3 rounded-xl text-xs font-bold text-center transition flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-regular fa-image text-amber-700 text-sm"></i> 檢視大溪教會「主題海報.jpg」
+            </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-6 text-xs text-brown-500 space-y-2">
+    <footer class="text-center py-6 text-xs text-brown-500 space-y-2.5">
+        <!-- Poster Quick Link in Footer -->
+        <div class="flex justify-center items-center">
+            <button onclick="openPosterModal()" class="bg-brown-100 hover:bg-brown-200 text-brown-800 px-3.5 py-1.5 rounded-full text-xs font-bold transition inline-flex items-center gap-1.5 shadow-sm border border-brown-200/60">
+                <i class="fa-solid fa-file-image text-brown-600"></i> 查看完整主題海報
+            </button>
+        </div>
         <div class="inline-block bg-brown-100/60 px-3 py-1 rounded-full text-[11px] text-brown-700">
             <i class="fa-brands fa-line text-emerald-600 mr-1"></i> 聯絡窗口：大溪教會 宣道股 王鴻志弟兄
         </div>
         <p>願耶穌基督的平安與喜樂與您同在</p>
         <p class="text-[10px] text-brown-400">© 2026 真耶穌教會大溪教會 保留所有權利</p>
     </footer>
+
+    <!-- Fullscreen Theme Poster Modal -->
+    <div id="poster-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 transition-opacity duration-300">
+        <div class="relative max-w-sm w-full bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="p-3 bg-brown-800 text-white flex justify-between items-center shrink-0">
+                <span class="text-xs font-bold flex items-center gap-1.5"><i class="fa-regular fa-image"></i> 2026 靈恩佈道會主題海報</span>
+                <button onclick="closePosterModal()" class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/40 transition">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+            <!-- Image Container -->
+            <div class="p-2 overflow-y-auto flex-1 flex justify-center items-center bg-brown-900/10">
+                <img src="主題海報.jpg" onerror="this.src='poster.jpg'" alt="2026 生命的道路 主題海報" class="w-full h-auto rounded-lg shadow-md object-contain">
+            </div>
+            <!-- Modal Footer Action -->
+            <div class="p-3 bg-white border-t border-brown-100 flex gap-2 shrink-0">
+                <a href="主題海報.jpg" target="_blank" class="flex-1 bg-brown-100 hover:bg-brown-200 text-brown-800 text-xs font-bold py-2.5 px-3 rounded-xl text-center transition flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> 開啟高清原圖
+                </a>
+                <button onclick="closePosterModal()" class="flex-1 bg-brown-800 text-white text-xs font-bold py-2.5 px-3 rounded-xl transition">
+                    關閉
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Sticky Mobile Bottom Bar -->
     <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/95 backdrop-blur-md border-t border-brown-100 p-3 z-50 shadow-lg flex items-center gap-2">
@@ -524,7 +569,7 @@
     <script>
         // Tab switching logic
         function switchTab(tabId) {
-            // Hide all tab panes
+        // Toast & Share Functions
             document.querySelectorAll('.tab-pane').forEach(pane => {
                 pane.classList.add('hidden');
             });
@@ -612,6 +657,19 @@
                 toast.classList.remove('opacity-100');
                 toast.classList.add('opacity-0', 'pointer-events-none');
             }, 2500);
+        }
+    </script>
+</body>
+</html>
+        // Poster Lightbox Modal Controls
+        function openPosterModal() {
+            const modal = document.getElementById('poster-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closePosterModal() {
+            const modal = document.getElementById('poster-modal');
+            modal.classList.add('hidden');
         }
     </script>
 </body>
