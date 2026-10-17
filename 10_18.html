@@ -161,14 +161,25 @@
                     </div>
                 </div>
                 
-                <!-- Map QR Code & Link -->
-                <div class="flex flex-col items-center">
-                    <a href="https://www.google.com/maps/search/?api=1&query=桃園市大溪區民權東路185巷31號" target="_blank" class="block bg-white p-1 rounded-lg shadow-sm border border-gray-100 hover:border-blue-300 transition-colors">
-                        <!-- Google API generated QR code for map link -->
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.google.com/maps/search/?api=1%26query=桃園市大溪區民權東路185巷31號" 
-                             alt="地圖 QR Code" class="w-16 h-16 rounded">
-                    </a>
-                    <span class="text-[9px] text-blue-600 mt-1 font-bold"><i class="fa-solid fa-location-dot"></i> 點擊/掃描導航</span>
+                <!-- 雙 QR Code 區域 (電子邀請函 & 地圖導航) -->
+                <div class="flex items-start gap-2">
+                    <!-- 電子邀請函 QR Code -->
+                    <div class="flex flex-col items-center">
+                        <a href="https://tjcdaxiinformation.github.io/tjc-daxi-revival-/10_18.html" target="_blank" class="block bg-white p-1 rounded-lg shadow-sm border border-leaf-200 hover:border-leaf-500 transition-colors">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://tjcdaxiinformation.github.io/tjc-daxi-revival-/10_18.html" 
+                                 alt="電子邀請函 QR Code" class="w-14 h-14 rounded">
+                        </a>
+                        <span class="text-[8px] text-brown-600 mt-1 font-bold text-center leading-tight tracking-wide">掃描獲取<br>電子邀請函</span>
+                    </div>
+
+                    <!-- 地圖 QR Code -->
+                    <div class="flex flex-col items-center">
+                        <a href="https://www.google.com/maps/search/?api=1&query=桃園市大溪區民權東路185巷31號" target="_blank" class="block bg-white p-1 rounded-lg shadow-sm border border-gray-100 hover:border-blue-300 transition-colors">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.google.com/maps/search/?api=1%26query=桃園市大溪區民權東路185巷31號" 
+                                 alt="地圖 QR Code" class="w-14 h-14 rounded">
+                        </a>
+                        <span class="text-[8px] text-blue-600 mt-1 font-bold text-center leading-tight tracking-wide">點擊/掃描<br>開啟導航</span>
+                    </div>
                 </div>
             </div>
         </section>
