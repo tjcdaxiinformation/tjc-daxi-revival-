@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>10/18 植物系書籤手作 | 大溪教會</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="10/18 邀請您參加：植物系書籤手作 🌿">
+    <meta property="og:description" content="用自然的花草，親手封存生命的溫度與祝福。免費參加，備有茶點，歡迎攜家帶眷來到大溪教會！">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        line: '#06C755',
+                        leaf: {
+                            100: '#eef4ea',
+                            500: '#7cb342',
+                            700: '#558b2f',
+                            900: '#33691e',
+                        },
+                        brown: {
+                            50: '#fdfbf7',
+                            100: '#f7f2ea',
+                            600: '#8c603a',
+                            800: '#5a3e2b',
+                            900: '#3a2312',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif TC"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .bg-pattern {
+            background-color: #fdfbf7;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='#8c603a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .title-shadow {
+            text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff;
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen flex items-center justify-center p-4">
+
+    <main class="max-w-md w-full bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border border-brown-100 relative">
+        
+        <!-- Decorative Leaves -->
+        <div class="absolute top-0 right-0 opacity-20 pointer-events-none">
+            <svg class="w-32 h-32 text-leaf-500" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 0 C70 30, 100 50, 100 50 C100 50, 70 70, 50 100 C30 70, 0 50, 0 50 C0 50, 30 30, 50 0 Z" />
+            </svg>
+        </div>
+
+        <!-- Header -->
+        <header class="text-center pt-8 pb-4 px-6 relative z-10">
+            <div class="inline-flex items-center gap-2 bg-leaf-100 text-leaf-900 px-3 py-1 rounded-full text-xs font-bold mb-3 border border-leaf-500/20">
+                <i class="fa-solid fa-dove"></i> 大溪教會 2026 邀請您
+            </div>
+            <h1 class="font-serif font-black text-4xl text-brown-900 tracking-wider mb-2 title-shadow">
+                生命的道路
+            </h1>
+            <p class="text-brown-600 text-sm font-medium">週末相聚 · 感受溫暖與愛</p>
+        </header>
+
+        <!-- Events Section -->
+        <section class="px-5 space-y-4 relative z-10">
+            
+            <!-- Morning Event -->
+            <div class="bg-brown-50 rounded-2xl p-4 border border-brown-100 relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 opacity-10">
+                    <i class="fa-solid fa-users text-6xl text-brown-800"></i>
+                </div>
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="bg-amber-100 text-amber-800 rounded-lg px-2 py-1 text-center leading-tight">
+                        <span class="block text-xs font-bold">10/18</span>
+                        <span class="block text-xs">(日)</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-brown-500 bg-white px-2 py-0.5 rounded-full border border-brown-100">上午 10:00 - 11:30</span>
+                        <h2 class="font-serif font-bold text-xl text-brown-800 mt-1">全體發傳單</h2>
+                    </div>
+                </div>
+                <p class="text-sm text-brown-600 ml-12">把愛與福音，傳遞到大溪的每個角落！</p>
+            </div>
+
+            <!-- Afternoon Event (Main Focus) -->
+            <div class="bg-leaf-100/50 rounded-2xl p-5 border border-leaf-500/30 relative overflow-hidden shadow-sm">
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="bg-leaf-500 text-white rounded-lg px-2 py-1 text-center leading-tight shadow-sm">
+                        <span class="block text-xs font-bold">10/18</span>
+                        <span class="block text-xs">(日)</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-leaf-700 bg-white px-2 py-0.5 rounded-full border border-leaf-100">下午 14:00 - 15:30</span>
+                        <h2 class="font-serif font-bold text-xl text-leaf-900 mt-1">植物系書籤手作 🌿</h2>
+                    </div>
+                </div>
+                <div class="bg-white/80 rounded-xl p-3 mb-3 border border-leaf-100">
+                    <p class="text-sm text-leaf-900 font-medium leading-relaxed">
+                        「用自然的花草，親手封存生命的溫度與祝福。」
+                    </p>
+                </div>
+                <ul class="text-xs text-leaf-700 space-y-1.5 font-medium ml-1">
+                    <li><i class="fa-solid fa-check text-leaf-500 mr-1.5"></i> 免費參加</li>
+                    <li><i class="fa-solid fa-check text-leaf-500 mr-1.5"></i> 備有精緻茶點</li>
+                    <li><i class="fa-solid fa-check text-leaf-500 mr-1.5"></i> 歡迎攜家帶眷、邀請朋友</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact & Actions -->
+        <section class="mt-6 px-5 pb-8 relative z-10">
+            <h3 class="text-center font-bold text-brown-800 mb-4 flex items-center justify-center gap-2">
+                <span class="h-px bg-brown-200 w-8"></span>
+                誠摯邀請您來相遇
+                <span class="h-px bg-brown-200 w-8"></span>
+            </h3>
+
+            <!-- LINE Button -->
+            <a href="https://line.me/ti/p/U3XGjc8GKN" target="_blank" rel="noopener noreferrer" 
+               class="block w-full bg-line hover:bg-[#05b34c] text-white text-center py-3.5 rounded-xl font-bold shadow-lg shadow-line/30 transition-all active:scale-95 mb-4 flex items-center justify-center gap-2">
+                <i class="fa-brands fa-line text-xl"></i>
+                加入 LINE 好友報名
+            </a>
+            <p class="text-center text-[11px] text-brown-500 mb-5">
+                聯絡窗口：宣道股負責人 王鴻志弟兄
+            </p>
+
+            <!-- Info & Map -->
+            <div class="bg-white rounded-xl border border-brown-100 p-4 shadow-sm flex items-center justify-between gap-4">
+                <div class="flex-1">
+                    <div class="mb-3">
+                        <span class="text-[10px] text-brown-500 font-bold block mb-0.5">聯絡電話</span>
+                        <a href="tel:0916336821" class="text-sm font-bold text-brown-800 hover:text-brown-600 flex items-center gap-1.5">
+                            <i class="fa-solid fa-phone text-brown-400"></i> 0916-336-821
+                        </a>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-brown-500 font-bold block mb-0.5">活動地點</span>
+                        <p class="text-xs font-medium text-brown-800 leading-snug">
+                            大溪教會<br>
+                            桃園市大溪區民權東路185巷31號
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Map QR Code & Link -->
+                <div class="flex flex-col items-center">
+                    <a href="https://www.google.com/maps/search/?api=1&query=桃園市大溪區民權東路185巷31號" target="_blank" class="block bg-white p-1 rounded-lg shadow-sm border border-gray-100 hover:border-blue-300 transition-colors">
+                        <!-- Google API generated QR code for map link -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.google.com/maps/search/?api=1%26query=桃園市大溪區民權東路185巷31號" 
+                             alt="地圖 QR Code" class="w-16 h-16 rounded">
+                    </a>
+                    <span class="text-[9px] text-blue-600 mt-1 font-bold"><i class="fa-solid fa-location-dot"></i> 點擊/掃描導航</span>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+</body>
+</html>
